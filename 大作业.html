@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>渐开线标准圆柱齿轮传动设计</title>
+	<link href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.css" rel="stylesheet">
+	<link rel="stylesheet" href="zuoye.css">
+</head>
+<body>
+	<section class="section">
+	<div class="container">
+		<div class="row">
+			<div class="getdata col-md-3">
+		<h3 class="text-center"><em>输入参数</em></h3>
+		<form class="form-inline">
+			<label>选择小齿轮材料：
+				<select class="form-control">
+				<option>40Cr</option>
+			</select></label>
+			<label>选择大齿轮材料：
+			<select class="form-control">
+				<option>45钢</option>
+			</select></label>
+			<label>小齿轮硬度：<input type="text" value="55HRC" class="form-control" disabled="disabled"></label>
+			<label>大齿轮硬度：<input type="text" value="48HRC" class="form-control" disabled="disabled"></label>
+			<label>精度等级：
+			<select class="form-control">
+				<option>8</option>
+			</select></label>
+			<label>小齿轮齿数z1：<input type="text" id="chishu" class="form-control"></label>
+			<div class="bottom"><button type="button" id="YFa_YSa" class="btn btn-info">齿形系数Y<sub>Fa</sub>及应力修正系数Y<sub>Sa</sub></button></div>
+			<label>载荷系数：<input type="text" id="zaihe" class="form-control"></label>
+			<label>齿宽系数&Phi;<sub>d</sub>：<input type="text" id="chikuan" class="form-control"></label>
+			<div class="bottom"><button type="button" id="KbS" class="btn btn-info">K<sub>&beta;S</sub></button>
+				<button type="button" id="KbM" class="btn btn-info">K<sub>&beta;M</sub></button></div>
+			<label>螺旋角&beta;：<input type="text" id="luoxuan" class="form-control"><sup>。</sup></label>
+			<label>名义传动功率P：<input type="text" id="chuandong" class="form-control">kW</label>
+			<label>主动轮转速n1：<input type="text" id="zhuanshu" class="form-control">r/min</label>
+			<label>从动轮转速/传动比i：<input type="text" id="chuandongbi" class="form-control"></label>
+			<label>工作年限：<input type="text" id="nianxian" class="form-control">年</label>
+			<label>每年工作天数：<input type="text" id="tianshu" class="form-control">天</label>
+			<label>每天工作时数：<input type="text" id="shishu" class="form-control">小时</label>
+			<label><input type="text" id="cishu" class="form-control">班制</label>
+			<label>载荷状态：<select id="load_state" class="form-control">
+			   <option value=0 selected>均匀平稳</option>
+			   <option value=1>轻微振动</option>
+			   <option value=2>中等振动</option>
+			   <option value=3>强烈振动</option>
+			</select></label>
+			<label>原动机种类：
+			<select id="yuan_kind" class="form-control">
+					<option value=0 selected>电动机、汽轮机、燃气轮机</option>
+					<option value=1>多缸内燃机</option>
+					<option value=2>单缸内燃机</option>
+				 </select></label>
+				 <div class="bottom">
+					 <button type="button" id="Ka" class="btn btn-info">使用系数K<sub>A</sub></button>
+					 <button type="button" id="mn" class="btn btn-info">标准模数m</button>
+				</div>
+				 <hr>
+			<button type="button" id="submit" class="btn btn-primary center-block">输出结果</button>
+		</form>
+	</div>
+	<div  class="col-md-9 gettable">
+		<h3 class="text-center"><em>查询表格</em></h3>
+<div id="table"></div>	
+</div>
+<p>渐开线标准圆柱齿轮传动设计</p>
+<img src="96895bc616004d819279e6bb41b24a01.png" class="section_img img-responsive"></img>
+</div>
+</div>
+</section>
+<section class="section1">
+		<div class="container">
+	<div class="row">
+<div class="col-md-3 input">
+<h3 class="text-center"><em>输出结果</em></h3>
+<div id="input_id"></div>
+<hr>
+<div class="make_center">
+<button type="button" class="btn btn-primary" id="jiaohe_id">校核齿面接触疲劳强度</button>
+<button type="button" class="btn btn-primary b_btn" id="model">建模</button>
+</div>
+</div>
+</div>
+<img src="25f7532a276d6b283a094d5771b6c5cd.png" class="section1_img"></img>
+</div>
+</section>
+<section class="section2">
+	<div class="container">
+	<h1>模型</h1>
+<div id="three_id"></div>
+</div>
+</section>
+<footer><div class="text-center">机电工程学院 电子封装技术 第三小组出品</div></footer>
+<script type="text/javascript" src="jquery-3.1.1.js"></script>
+<script src="https://cdn.bootcss.com/layer/3.0.3/layer.js"></script>
+<script type="text/javascript" src="three.js"></script>
+<script type="text/javascript" src="OrbitControls.js"></script>
+<script type="text/javascript" src="config.js"></script>
+<script type="text/javascript" src="moxing.js"></script>
+<script type="text/javascript" src="zuoye.js"></script>
+</body>
+</html>
